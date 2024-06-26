@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import React from 'react';
+import store from '../src/page/store';
+import {Provider} from "react-redux";
+import RegistrationForm from "./page/RegistrationForm";
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Provider store={store}>
+        <div>
+          <h1>Форма регистрации</h1>
+          <RegistrationForm/>
+        </div>
+      </Provider>
   );
-}
+};
 
 export default App;
